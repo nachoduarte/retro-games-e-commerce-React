@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# retro-games_Duarte
+
+proyecto para aplicación E-commerce programada en el entorno React JS 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
