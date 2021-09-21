@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.fontReg{
+    font-family: 'Roboto mono', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    word-spacing: 0.2rem;
+}
+
+.mainTextColor{
+    color: #092249 
+}
+
+/*navbar*/
+
+.navbarDisplay{
+top: 0;
+left: 0;
+right: 0;
+z-index: 1;
+height: initial;
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+padding: 1rem;
+}
+
+.logoDisplay{
+    width:20%;
+    align-self: flex-start;
+}
+
+.menuDisplay{
+    align-self: flex-end;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    padding: 1rem;
+}
+
+.nav-button {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    height: 3rem; }
+
+.nav-button:hover .nav-link {
+    color: #092249  }
+      
+.nav-button:hover .current-link {
+    color: red;
+    width: 4px;
+    height: 4px; }
+
+        
+.nav-a {
+    padding: 0;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    transition: all 300ms ease-in-out; }
+          
+.nav-a:visited {
+    color: #092249  
+}
+
+.nav-a:hover{
+    color: red;
+}
+
+          
+.nav-a.active ~ .current-link {
+    width: 4px;
+    height: 4px; }
+          
+.current-link {
+    width: 0px;
+    height: 0px;
+    background:  #092249 ;
+    border-radius: 100px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 300ms ease-in-out; }
+ 
+a {
+    color:#092249;
+    text-decoration: none;
+    text-decoration-line: none !important;
+    border: 0;
+    position: relative; 
+}

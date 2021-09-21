@@ -1,24 +1,25 @@
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import './styles/main.css'; 
+import NavBar from'./components/NavBar.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header>
+        <NavBar />
+        
+
+      </header>
+
+      <main>
+      <img src={logo} className="App-logo" alt="logo" />
         <p>
           proyecto e-commerce website - Retro Games - Juan Ignacio Duarte.
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </main>
     </div>
   );
 }
