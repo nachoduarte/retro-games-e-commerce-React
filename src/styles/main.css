@@ -27,14 +27,19 @@ padding: 1rem;
 }
 
 .logoDisplay{
-    width:20%;
+    width:40%;
     align-self: flex-start;
+    padding-top: 0;
+    padding-left: auto;
+    padding-right: auto;
+    padding-bottom: 0;
 }
 
 .menuDisplay{
     align-self: flex-end;
     display: flex;
     flex-direction:row;
+    align-items:center;
     justify-content:space-between;
     padding: 1rem;
 }
