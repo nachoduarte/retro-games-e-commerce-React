@@ -94,3 +94,8 @@ a {
     border: 0;
     position: relative; 
 }
+
+
+.badge{
+    font-size: .8rem;
+}

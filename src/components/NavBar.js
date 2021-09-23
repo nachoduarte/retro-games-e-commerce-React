@@ -1,5 +1,6 @@
 import logo from "../images/FantasyRetroLogo.svg";
 import '../styles/main.css';
+import CartWidget from './CartWidget.js';
 
 function NavBar() {
     return <>
@@ -17,7 +18,9 @@ function NavBar() {
                             <a className="nav-a fontReg" href="#">Tienda</a>
                         </li>
                         <li className="nav-button">
-                            <a className="nav-a fontReg" href="#">Carrito</a>
+                            <a className="nav-a fontReg" href="#">
+                                <CartWidget />
+                            </a>
                         </li>
                     
                     </ul>
