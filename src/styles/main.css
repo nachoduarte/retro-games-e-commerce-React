@@ -99,3 +99,21 @@ a {
 .badge{
     font-size: .8rem;
 }
+
+/* Contador */ 
+
+.card{
+    width:15%; 
+    margin:auto;
+    padding:auto;
+}
+
+
+.itemButtons{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding: 2px;
+    margin: 2px;
+    
+}
