@@ -1,4 +1,4 @@
-import logo from "../images/FantasyRetroLogo.svg";
+import logo from "../images/FantasyRetroLogo.png";
 import '../styles/main.css';
 import CartWidget from './CartWidget.js';
 
@@ -7,7 +7,7 @@ function NavBar() {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid navbarDisplay">
                 <a className="logoDisplay" href="#">
-                    <img src={logo} width="80%"></img>
+                    <img src={logo} width="300px" alt="logo"></img>
                 </a>
                 <div>
                     <ul className="navbar-nav menuDisplay">

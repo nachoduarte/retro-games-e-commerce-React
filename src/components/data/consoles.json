@@ -1,0 +1,50 @@
+[{
+    "id": 1,
+    "name": "Consola Nintendo 64",
+    "description":
+      "Consola Nintendo 64 usada + controles",
+    "price": 15000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-01_jfqvdw.png",
+    "stock": 10
+  },
+  {
+    "id": 2,
+    "name": "Consola Nintendo Gamecube",
+    "description":
+      "Consola Nintendo Gamecube usada + controles",
+    "price": 18000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-02_khmrwy.png",
+    "stock": 10
+  },
+  {
+    "id": 3,
+    "name": "Consola Play Station Uno",
+    "description":
+      "Consola Play Station Uno usada, modelo FAT + controles",
+    "price": 5000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-05_lbamfb.png",
+    "stock": 5
+  },
+  {
+    "id": 4,
+    "name": "Consola Play Station Dos",
+    "description":
+      "Consola Play Station Dos usada, modelo SLIM + controles",
+    "price": 12000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-04_qj1kb6.png",
+    "stock": 10
+  },
+  {
+    "id": 5,
+    "name": "Videojuego SuperSmash Bros 64",
+    "description":
+      "SuperSmash Bros para Nintendo 64 cartucho sin caja",
+    "price": 4000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-03_yfhcwn.png",
+    "stock": 5
+  }]
