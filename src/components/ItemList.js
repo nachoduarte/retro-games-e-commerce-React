@@ -1,32 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Item from './Item.js';
 
+const ItemList = ({ productos }) => {
 
-function ItemList (props) {
-    const { items } = props;
+    console.log(productos);
+    return (
+      <div className="listContainerDisplay">
+        {productos.length !== 0 ? (
+          productos.map((producto) => (
+            <Item product={producto} key={producto.id} />
+          ))
+        ) : (
+            <div className="spinner-border text-danger" role="status">
+            <span className="visually-hidden">Loading...</span>
+            </div>
+        )}
+      </div>
+    );
+  };
 
-    const [products, setProducts] = useState(0);
 
-    const maxValue = typeof items.length === 'undefined' ? 0 : items.length;
+
+/*const ItemList = ({productos}) => {
 
     useEffect(() =>{
-        if (maxValue > 0){
-            setProducts(
-                items.map((element, index) => <Item props={element} key={index} />)
-            );
+        if (productos.length !== 0){
+            
+                productos.map((element, index) => <Item producto={element} key={index} />)
+            ;
         }
-    }, [maxValue, items]);
+    });
 
-    return <>
-        {products ? (
-            <div className="listContainerDisplay">{products}</div>
-        ) : (
+    return (
+        <div className="listContainerDisplay">
+            {productos.length !== 0 ? (
+                productos.map((element, index) => (
+                    <Item producto={element} key={index} />
+                ))
+            ) : (
                 <div className="spinner-border text-danger" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
-        )}
-    </>
-
+            )}
+        </div>
+    )
 }
-
+*/
 export default ItemList;

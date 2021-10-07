@@ -1,30 +1,44 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import ItemList from './ItemList.js';
 import consoles from './data/consoles.json';
 
 
-const ItemListContainer = (props) => {
-    const {texto} = props;
+function ItemListContainer(){
 
-    const [itemList, setitemList] = useState(0);
+    const [productos, setProductos] = useState([]);
+    const { id: idCategory } = useParams();
 
-    useEffect(() =>{
-        const getData = new Promise((resolve, reject) =>{
-            setTimeout(function(){
-                resolve(consoles);
+
+    const getData = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (idCategory) {
+                    const filtroCategory = consoles.filter(
+                        (item) => item.categoria === idCategory
+                    );
+                    resolve(filtroCategory);
+                } else {
+                    resolve(consoles);
+                }
+
+                reject("error al cargar productos");
             }, 2000);
         });
+    };
 
-        getData.then((response) =>{
-            setitemList(response);
-        });
-    }, []);
+    useEffect(() =>{
+        setProductos([]);
+        getData()
+            .then((response) => setProductos(response))
+            .catch((error) => console.log(error));
+    }, [idCategory]);
 
 
     return <>
-        <p className="fontReg mainTextColor">{texto}</p>
-        <div>
-            <ItemList items={itemList} />
+        
+        <div className="listContainerFather">
+            <ItemList productos={productos} />
         </div>
 
     </>

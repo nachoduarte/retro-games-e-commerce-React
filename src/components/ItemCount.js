@@ -25,7 +25,7 @@ function ItemCount(props) {
 
     return <>
         <div>
-            <p>Cantidad Disponible: {actualStock}</p>
+            <p>Cantidad Disponible: {stock}</p>
             <div className="itemButtons">
                 <button className="btn btn-danger" onClick={remove}>-</button>
                 <p>{cantidad}</p>

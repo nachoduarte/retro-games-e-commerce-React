@@ -1,42 +1,41 @@
-import {Modal, Card } from 'react-bootstrap';
+
 import ItemCount from './ItemCount.js';
 
-const ItemDetail = (props) => {
-        const { id, name, description, price, pictureUrl, stock } = props.props;
+const ItemDetail = ({producto}) => {
+        /*const { id, name, description, price, pictureUrl, stock } = props.props;*/
 
         const product = {
-            stock: stock,
+            stock: producto.stock,
             initial: 1,
             onAdd: (stock, cantidad) =>{
                 alert(`Se agregarán ${cantidad} unidades al carrito`)
                 return stock - cantidad;
             },
-            precio: price,
+            precio: producto.price,
         };
+
+
         return(
             <>
-            <Modal.Header closeButton>
-                <Modal.Title>{name}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <Card>
-                    <Card.Img variant="top" src={pictureUrl} width="80%" />
-                    <Card.Body>
-                        <Card.Text>
+                <div className="card">
+                    <img src={producto.pictureUrl} className="card-img-top" alt={producto.name} width="100%" />
+                    <div className="card-body">
+                        <div>
+                            <h5 className="card-title">{producto.name}</h5>
                             <span className="badge bg-success" style={{ textAlign: "center" }}>
-                                Id: {id}
+                                Id: {producto.id}
                             </span>
                             <br />
-                            <span>{description}</span>
+                            <span>{producto.description}</span>
                             <br />
                             <span className="badge bg-secondary">
-                                Precio: ${price}
+                                Precio: ${producto.price}
                             </span>
-                        </Card.Text>
+                        </div>
                         <ItemCount props={product} />
-                    </Card.Body>
-                </Card>
-            </Modal.Body>
+                    </div>
+                </div>
+            
             </>
         );
 

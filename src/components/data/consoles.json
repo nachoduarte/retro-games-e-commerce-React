@@ -6,7 +6,8 @@
     "price": 15000,
     "pictureUrl":
       "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-01_jfqvdw.png",
-    "stock": 10
+    "stock": 10,
+    "categoria": "1"
   },
   {
     "id": 2,
@@ -16,7 +17,8 @@
     "price": 18000,
     "pictureUrl":
       "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-02_khmrwy.png",
-    "stock": 10
+    "stock": 10,
+    "categoria": "1"
   },
   {
     "id": 3,
@@ -26,7 +28,8 @@
     "price": 5000,
     "pictureUrl":
       "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-05_lbamfb.png",
-    "stock": 5
+    "stock": 5,
+    "categoria": "1"
   },
   {
     "id": 4,
@@ -36,7 +39,8 @@
     "price": 12000,
     "pictureUrl":
       "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-04_qj1kb6.png",
-    "stock": 10
+    "stock": 10,
+    "categoria": "1"
   },
   {
     "id": 5,
@@ -46,5 +50,61 @@
     "price": 4000,
     "pictureUrl":
       "https://res.cloudinary.com/dnwlad3kp/image/upload/v1632960851/cardItem-03_yfhcwn.png",
-    "stock": 5
+    "stock": 5,
+    "categoria": "2"
+  },
+  {
+    "id": 6,
+    "name": "Joystick Nintendo 64 azul",
+    "description":
+      "Joystick para consola Nintendo 64 usado color azul",
+    "price": 6000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1633564342/cardItem-07_juwyhi.png",
+    "stock": 10,
+    "categoria": "3"
+  },
+  {
+    "id": 7,
+    "name": "Consola Gameboy Color Usada",
+    "description":
+      "Consola portatil Gameboy Color, modelo azul, sin caja",
+    "price": 8000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1633564343/cardItem-09_pmj0ph.png",
+    "stock": 3,
+    "categoria": "1"
+  },
+  {
+    "id": 8,
+    "name": "Videojuego The Legend of Zelda: Ocarina of Time",
+    "description":
+      "The Legend of Zelda: Ocarina of Time, para consola Nintendo 64, cartucho, sin caja",
+    "price": 8000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1633564343/cardItem-10_jdzmd2.png",
+    "stock": 3,
+    "categoria": "2"
+  },
+  {
+    "id": 9,
+    "name": "Videojuego Pokemon Gold con caja",
+    "description":
+      "Pokemon Gold para Gameboy Color, usado, en caja",
+    "price": 5000,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1633564343/cardItem-06_nwzepf.png",
+    "stock": 2,
+    "categoria": "2"
+  },
+  {
+    "id": 10,
+    "name": "Videojuego Final Fantasy IX PS Uno",
+    "description":
+      "Videojuego Final Fantasy IX para consola Play Station Uno, original, nuevo, edicion greatest hits",
+    "price": 6500,
+    "pictureUrl":
+      "https://res.cloudinary.com/dnwlad3kp/image/upload/v1633564343/cardItem-08_e6p1iz.png",
+    "stock": 10,
+    "categoria": "2"
   }]

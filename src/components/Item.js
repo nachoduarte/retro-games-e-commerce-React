@@ -1,20 +1,23 @@
+
 import React from 'react';
-import ItemDetailContainer from './ItemDetailContainer.js';
+import { Link } from 'react-router-dom';
 
 
-const Item = (props) => {
-    const {name, pictureUrl, stock} = props.props;
+function Item({product}){
+    /*const {name, pictureUrl, stock} = props.props;*/
 
 
     return (
         <div className="cardMargin">
             <div className="card">
-                <img src={pictureUrl} className="card-img-top" alt="..."></img>
+                <img src={product.pictureUrl} className="card-img-top" alt={product.name}></img>
                 <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
-                    <p>Disponibles: {stock}</p>    
+                    <h5 className="card-title">{product.name}</h5>
+                    <p>Disponibles: {product.stock}</p>    
                 </div>
-                <ItemDetailContainer props={props.props} />
+                <Link to={`/item/${product.id}`} className="btn btn-primary">
+                    Ver más
+                </Link>       
             </div>
         </div>
     )

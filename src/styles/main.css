@@ -14,6 +14,14 @@
 
 /*navbar*/
 
+.navbar{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    height: initial;
+}
 .navbarDisplay{
 top: 0;
 left: 0;
@@ -93,22 +101,38 @@ a {
     position: relative; 
 }
 
-
+.carousel{
+    margin-top:120px;
+}
 .badge{
     font-size: .8rem;
 }
 
 /* Lista de productos */
 
+.listContainerFather{
+    display:flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+}
+
 .listContainerDisplay{
     display: flex;
     flex-direction:row;
+    width: 100%;
+    max-width: 1300px;
+    flex-flow: wrap;
+    align-items:center;
     
 }
 
 .cardMargin{
-    margin:0;
+    margin-top: 20px;
+    margin-bottom:20px;
     padding:0;
+    max-width: 260px;
+    height:500px;
 }
 
 
@@ -119,8 +143,9 @@ a {
     flex-direction:column;
     justify-content: space-between;
     height: 100%;
-    width:auto; 
-    margin: 10px;
+    max-width: 260px; 
+    margin-right:10px;
+    margin-left:10px;
     padding:10px;
 }
 
