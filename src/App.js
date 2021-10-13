@@ -6,6 +6,7 @@ import NavBar from'./components/NavBar.js';
 import BannerCarousel from './components/BannerCarousel.js';
 import ItemListContainer from './components/ItemListContainer.js';
 import ItemDetailContainer from './components/ItemDetailContainer.js'; 
+import CartContainer from './components/CartContainer.js';
 
 function App() {
   
@@ -32,6 +33,9 @@ function App() {
 
           <Route exact path="/item/:id">
             <ItemDetailContainer  />
+          </Route>
+          <Route exact path="/cart">
+            <CartContainer />
           </Route>
         </Switch>
       </main>

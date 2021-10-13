@@ -26,9 +26,9 @@ function NavBar() {
                             <Link to={`/category/3`} className="nav-a fontReg" >Joysticks</Link>
                         </li>
                         <li className="nav-button">
-                            <a className="nav-a fontReg" href="#">
+                            <Link to={`/cart`} className="nav-a fontReg" href="#">
                                 <CartWidget />
-                            </a>
+                            </Link>
                         </li>
                     
                     </ul>

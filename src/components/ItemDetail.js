@@ -1,13 +1,13 @@
 
-import {useState} from 'react';
+import React, {useState} from 'react';
 import ItemCount from './ItemCount.js';
 
 const ItemDetail = ({producto}) => {
         const { id, name, description, price, pictureUrl, stock } = producto;
 
-        const carritoProductos = [];
+        
 
-        const product = {
+      /*  const product = {
             id: id,
             name: name,
             stock: stock,
@@ -18,7 +18,7 @@ const ItemDetail = ({producto}) => {
             },
             precio: price,
             carritoProductos: carritoProductos,
-        };
+        };*/
 
 
         return(
@@ -38,12 +38,9 @@ const ItemDetail = ({producto}) => {
                                 Precio: ${price}
                             </span>
                         </div>
-                        {carritoProductos != null && carritoProductos.length ? (
-                            <button className="btn btn-success">Terminar mi compra</button>
-                        ) : (
-                            <ItemCount props={product} />
-                        )}
                         
+                        <ItemCount stock="5" initial="1" />
+                                               
                     </div>
                 </div>
             

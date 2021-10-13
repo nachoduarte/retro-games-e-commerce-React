@@ -1,8 +1,49 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 
-function ItemCount(props) {
-    //Desestructuracion de props
+
+function ItemCount({stock, initial}) {
+    
+    const [isEstado, setEstado] = useState(true);
+
+    const handleRemove = (e) => {
+        e.preventDefault();
+        removeOne();
+        console.log("resta");
+    }
+    const handleAdd = (e) => {
+        e.preventDefault();
+        addOne();
+    }
+    
+
+    const onAdd = (e, input) => {
+        e.preventDefault();
+        setEstado();
+        console.log("agrega Item a carrito");
+    }
+    
+    function addOne() {
+        let resultado = parseInt(contador) + parseInt(1);
+        if (resultado <= stock){ 
+            setContador(resultado);
+        }else{
+            alert("no hay stock");
+        }
+    }
+
+    function removeOne() {
+        let resultado = parseInt(contador) - parseInt(1);
+        if (resultado >= 1){
+            setContador(resultado);
+        }
+    }
+
+    const [contador, setContador] = useState(initial);
+    
+    
+    
+    /*//Desestructuracion de props
     const {stock, initial, onAdd, carritoProductos} = props.props;
 
     //Hooks y variables
@@ -23,28 +64,27 @@ function ItemCount(props) {
         if (cantidad > initial) {
             setCantidad(cantidad - 1);
         }
-    };
+    };*/
 
 
     return <>
-        <div>
-            <p>Cantidad Disponible: {actualStock}</p>
-            <div className="itemButtons">
-                <button className="btn btn-danger" onClick={remove}>-</button>
-                <p>{cantidad}</p>
-                <button className="btn btn-danger" onClick={add}>+</button>
+            {isEstado ? 
+            <div>
+                <div className="itemButtons">
+                    <a href="" className="btn btn-danger" onClick={handleRemove}>-</a>
+                    <input type="text" className="form-control text-center" placeholder="cantidad" aria-label="Username" aria-describedby="basic-addon1" value={contador} id="input" />
+                    <a href="" className="btn btn-danger" onClick={handleAdd}>+</a>
+                </div>
+                <button className="btn btn-primary" onClick={onAdd}>Agregar al carrito</button>
+            </div> 
+            :
+            <div className="row">
+                <div className="col-12">
+                    <a className="btn btn-success form-control" href="/cart">Ir al carrito</a>
+                </div>
             </div>
-            <button className="btn btn-primary" onClick={() =>{
-                
-                setCarrito(carrito, cantidad);
-                console.log(carritoProductos);
-                actualStock >= cantidad &&
-                setActualStock(onAdd(actualStock, cantidad));
-                cantidad > actualStock &&
-                alert ("No queda mas stock del producto seleccionado");
-            }}>Agregar al carrito</button>
-        </div>
-
+        }
+       
 
     </>
 }
