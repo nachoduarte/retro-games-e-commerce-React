@@ -41,31 +41,6 @@ function ItemCount({stock, initial}) {
 
     const [contador, setContador] = useState(initial);
     
-    
-    
-    /*//Desestructuracion de props
-    const {stock, initial, onAdd, carritoProductos} = props.props;
-
-    //Hooks y variables
-    const [cantidad, setCantidad] = useState(initial);
-    const [actualStock, setActualStock] = useState(stock);
-    const [carrito, setCarrito] = useState(carritoProductos);
-    
-    
-    
-
-    const add = () => {
-        if (cantidad <= stock - 1) {
-            setCantidad(cantidad + 1);
-        }
-    };
-
-    const remove = () => {
-        if (cantidad > initial) {
-            setCantidad(cantidad - 1);
-        }
-    };*/
-
 
     return <>
             {isEstado ? 
