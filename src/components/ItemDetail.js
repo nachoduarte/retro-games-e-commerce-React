@@ -1,10 +1,16 @@
 
 import React, {useState} from 'react';
 import ItemCount from './ItemCount.js';
+import {CartContextUse} from './CartContext.js';
 
 const ItemDetail = ({producto}) => {
         const { id, name, description, price, pictureUrl, stock } = producto;
 
+        const { addItem } = CartContextUse();
+
+        const onAdd = (qty) => {
+            addItem(producto, qty);
+        }
         
 
       /*  const product = {
@@ -39,7 +45,7 @@ const ItemDetail = ({producto}) => {
                             </span>
                         </div>
                         
-                        <ItemCount stock="5" initial="1" />
+                        <ItemCount stock={stock} initial="1" onAdd={onAdd}  />
                                                
                     </div>
                 </div>

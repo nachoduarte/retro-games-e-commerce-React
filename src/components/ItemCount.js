@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 
-function ItemCount({stock, initial}) {
+function ItemCount({stock, initial, onAdd}) {
     
     const [isEstado, setEstado] = useState(true);
 
@@ -17,8 +17,7 @@ function ItemCount({stock, initial}) {
     }
     
 
-    const onAdd = (e, input) => {
-        e.preventDefault();
+    function onTrigger(){
         setEstado();
         console.log("agrega Item a carrito");
     }
@@ -43,14 +42,16 @@ function ItemCount({stock, initial}) {
     
 
     return <>
-            {isEstado ? 
+            {isEstado ?
             <div>
                 <div className="itemButtons">
                     <a href="" className="btn btn-danger" onClick={handleRemove}>-</a>
                     <input type="text" className="form-control text-center" placeholder="cantidad" aria-label="Username" aria-describedby="basic-addon1" value={contador} id="input" />
                     <a href="" className="btn btn-danger" onClick={handleAdd}>+</a>
                 </div>
-                <button className="btn btn-primary" onClick={onAdd}>Agregar al carrito</button>
+                <button className="btn btn-primary" onClick={() =>{
+                                                             onAdd(parseInt(contador));
+                                                             onTrigger()}}>Agregar al carrito</button>
             </div> 
             :
             <div className="row">
