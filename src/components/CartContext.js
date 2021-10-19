@@ -28,9 +28,24 @@ export default function CartContextProvider({children}){
 
     const isInCart = (id) => cart.find(element => element.item.id ===id);
 
+    
+
+    const clear = () =>{
+        setCart([]);
+    }
+
+    const removeItem = (id) => {
+        const cartFilter = () => cart.filter((element) => element.item.id !== id);
+        setCart(cartFilter);
+    };
+
+
+    const cartProducts = cart.reduce((acc, product) => acc += product.quantity, 0)
+
     console.log('carrito', cart)
+
     return(
-        <CartContext.Provider value={{cart, addItem}}>
+        <CartContext.Provider value={{cart, addItem, clear, removeItem, cartProducts}}>
             {children}
         </CartContext.Provider>
     )

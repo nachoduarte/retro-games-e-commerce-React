@@ -7,7 +7,7 @@ import NavBar from'./components/NavBar.js';
 import BannerCarousel from './components/BannerCarousel.js';
 import ItemListContainer from './components/ItemListContainer.js';
 import ItemDetailContainer from './components/ItemDetailContainer.js'; 
-import CartContainer from './components/CartContainer.js';
+import Cart from './components/Cart.js';
 import CartContextProvider from './components/CartContext.js';
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
             <ItemDetailContainer  />
           </Route>
           <Route exact path="/cart">
-            <CartContainer />
+            <Cart/>
           </Route>
         </Switch>
       </main>

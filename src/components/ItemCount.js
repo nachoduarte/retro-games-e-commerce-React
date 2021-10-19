@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 
 
 
@@ -56,7 +57,7 @@ function ItemCount({stock, initial, onAdd}) {
             :
             <div className="row">
                 <div className="col-12">
-                    <a className="btn btn-success form-control" href="/cart">Ir al carrito</a>
+                    <Link to="/cart" className="btn btn-success form-control" href="/cart">Ir al carrito</Link>
                 </div>
             </div>
         }
