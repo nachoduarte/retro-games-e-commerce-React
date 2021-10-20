@@ -5,7 +5,23 @@ import { Link } from 'react-router-dom';
 
 function ItemCount({stock, initial, onAdd}) {
     
-    const [isEstado, setEstado] = useState(true);
+
+    const [contador, setContador] = useState(initial);
+
+    const add = () => {
+        contador < stock ? 
+        setContador(contador + 1)
+        : alert("No hay mas stock disponible!");
+    };
+
+    const substract = () => {
+        contador > initial ?
+        setContador(contador - 1)
+        : console.log("se supero el minimo");
+    };
+    
+    
+    /*const [isEstado, setEstado] = useState(true);
 
     const handleRemove = (e) => {
         e.preventDefault();
@@ -37,33 +53,30 @@ function ItemCount({stock, initial, onAdd}) {
         if (resultado >= 1){
             setContador(resultado);
         }
-    }
+    }*/
 
-    const [contador, setContador] = useState(initial);
+    
     
 
     return <>
-            {isEstado ?
+            
             <div>
                 <div className="itemButtons">
-                    <a href="" className="btn btn-danger" onClick={handleRemove}>-</a>
+                    <button href="" className="btn btn-danger" onClick={substract}>-</button>
                     <input type="text" className="form-control text-center" placeholder="cantidad" aria-label="Username" aria-describedby="basic-addon1" value={contador} id="input" />
-                    <a href="" className="btn btn-danger" onClick={handleAdd}>+</a>
+                    <button href="" className="btn btn-danger" onClick={add}>+</button>
                 </div>
-                <button className="btn btn-primary" onClick={() =>{
-                                                             onAdd(parseInt(contador));
-                                                             onTrigger()}}>Agregar al carrito</button>
+                {contador > 0 ? (
+                    <button onClick={() => onAdd(contador)}
+                    type="button"
+                    className="btn btn-primary container-fluid mt-2">
+                        Agregar al carrito
+                    </button>
+                ) : (
+                    console.log("no hay objetos seleccionados")
+                )}
             </div> 
-            :
-            <div className="row">
-                <div className="col-12">
-                    <Link to="/cart" className="btn btn-success form-control" href="/cart">Ir al carrito</Link>
-                </div>
-            </div>
-        }
-       
-
-    </>
+        </>
 }
 
 export default ItemCount;

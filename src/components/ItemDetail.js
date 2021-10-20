@@ -1,58 +1,50 @@
-
 import React, {useState} from 'react';
+import { Card, Container, Spinner } from 'react-bootstrap';
 import ItemCount from './ItemCount.js';
+import { Link } from 'react-router-dom';
 import {CartContextUse} from './CartContext.js';
 
 const ItemDetail = ({producto}) => {
-        const { id, name, description, price, pictureUrl, stock } = producto;
+        const { name, description, price, pictureUrl, stock } = producto;
 
-        const { addItem } = CartContextUse();
+        const { addItem, cart } = CartContextUse();
 
         const onAdd = (qty) => {
             addItem(producto, qty);
         }
         
 
-      /*  const product = {
-            id: id,
-            name: name,
-            stock: stock,
-            initial: 1,
-            onAdd: (stock, cantidad) =>{
-                alert(`Se agregarán ${cantidad} unidades al carrito`)
-                return stock - cantidad;
-            },
-            precio: price,
-            carritoProductos: carritoProductos,
-        };*/
-
-
         return(
-            <>
-                <div className="card">
-                    <img src={pictureUrl} className="card-img-top" alt={name} width="100%" />
-                    <div className="card-body">
-                        <div>
-                            <h5 className="card-title">{name}</h5>
-                            <span className="badge bg-success" style={{ textAlign: "center" }}>
-                                Id: {id}
-                            </span>
-                            <br />
-                            <span>{description}</span>
-                            <br />
-                            <span className="badge bg-secondary">
-                                Precio: ${price}
-                            </span>
-                        </div>
-                        
-                        <ItemCount stock={stock} initial="1" onAdd={onAdd}  />
-                                               
-                    </div>
-                </div>
-            
-            </>
+                <Container className="d-flex justify-content-center">
+                    {(name, pictureUrl, description, price, stock) ? (
+                        <Card style={{ width: "18rem"}} className="text-center me-4 mt-3">
+                            <Card.Img variant="top" className="mt-3 ps-3 pe-3" src={pictureUrl} />
+                            <Card.Body>
+                                <Card.Title>
+                                    <h4>{name}</h4>
+                                </Card.Title>
+                                <Card.Text>{description}</Card.Text>
+                                <h5>${price}</h5>
+                                <ItemCount stock={stock} initial={0} onAdd={onAdd} />
+                                {cart.length > 0 ? (
+                                    <div>
+                                        <Link to="/cart" className="btn btn-primary m-3">
+                                            Ir al carrito
+                                        </Link>
+                                    </div>
+                                ) : (
+                                    console.log("carrito vacio")
+                                )}
+                                <Link className="btn btn-secondary" to="/">
+                                    Volver
+                                </Link> 
+                            </Card.Body>
+                        </Card>
+                    ) : (
+                        <Spinner animation="border" variant="danger" />
+                    )}
+                </Container>                
         );
-
 };
 
 export default ItemDetail;

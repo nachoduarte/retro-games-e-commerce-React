@@ -17,13 +17,13 @@ export default function CartContextProvider({children}){
                 if(element.item.id === item.id){
                     element.quantity += quantity;
                 }
-            })
+            });
             setCart(updateQty);
         }else {
-            setCart([...cart, {item, quantity}])
+            setCart([...cart, {item, quantity}]);
         }
         
-    }
+    };
 
 
     const isInCart = (id) => cart.find(element => element.item.id ===id);
@@ -42,10 +42,13 @@ export default function CartContextProvider({children}){
 
     const cartProducts = cart.reduce((acc, product) => acc += product.quantity, 0)
 
+    const totalPrice = cart.reduce((acc, product) => acc += ((product.item.price) * (product.quantity)), 0)
+    parseInt(totalPrice)
+
     console.log('carrito', cart)
 
     return(
-        <CartContext.Provider value={{cart, addItem, clear, removeItem, cartProducts}}>
+        <CartContext.Provider value={{cart, addItem, clear, removeItem, cartProducts, totalPrice, isInCart, setCart }}>
             {children}
         </CartContext.Provider>
     )

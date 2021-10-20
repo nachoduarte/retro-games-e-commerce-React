@@ -4,7 +4,7 @@ import { CartContextUse } from './CartContext';
 import { Link } from 'react-router-dom';
 
 const Cart = () =>{
-    const { clear, removeItem, cart } = CartContextUse();
+    const { clear, removeItem, cart, totalPrice, addItem } = CartContextUse();
 
     return (
         <Container>
@@ -25,13 +25,22 @@ const Cart = () =>{
                         </>
                     );
                 })}
-                    {cart.lenght > 0 ?
-                        <Button onClick={clear} className="w-25 mt-5" variant="warning">
-                            Vaciar Carrito
-                        </Button> : <h5>El carrito esta vacio </h5> }
+                    {cart.length > 0 ?(
+                        <>
+                            {" "}
+                            <h5 className="mt-5 align-self-end text-center">
+                                Total a pagar: ${totalPrice}
+                            </h5>
+                            <Button onClick={clear} className="w-25 mt-5" variant="warning">
+                                Vaciar Carrito
+                            </Button>{" "}
+                        </>
+                        ) : (
+                            <h5>El carrito esta vacio </h5>
+                        )}
                         <Link to="/" className="btn btn-primary mt-3 w-25">
                             Volver a la tienda
-                        </Link>                        
+                        </Link>                                   
             </div>
         </Container>
     );
